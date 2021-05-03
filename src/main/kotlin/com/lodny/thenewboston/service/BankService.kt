@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service
 import javax.sql.DataSource
 
 @Service
-class BankService(@Qualifier("network") private val dataSource: BankDataSource) {
+class BankService(@Qualifier("mock") private val dataSource: BankDataSource) {
 
     fun getBanks(): Collection<Bank> = dataSource.retrieveBanks()
     fun getBank(accountNumber: String) = dataSource.retrieveBank(accountNumber)
